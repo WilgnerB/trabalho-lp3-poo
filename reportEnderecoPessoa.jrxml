@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportEnderedoPessoa" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c305dae2-3757-408c-ba2f-69ffe9e448d2">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[dGJlbmRlcmVjbyBBUyAsMTUsMTUsMGNiNDU5ZTgtMzEzZi00ZTQ0LTg3ZDYtMWMxZDRlNWUxZWI2
+O3RicGVzc29hIEFTICwxNjMsMTUsOTE2MWQyYzAtN2VmMC00NjFjLWE3MDktMTdiODkyMGE0MWQy
+Ow==]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Mysql"/>
+	<parameter name="Title" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT `cdEndereco`,`numero`,`logradouro`,`cep`,`cidade`,`bairro`,`uf`,P.`cdPessoa`,`nmPessoa`
+FROM `tbendereco` AS E,`tbpessoa` AS P
+WHERE  E.`CdPessoa`=P.`cdPessoa`]]>
+	</queryString>
+	<field name="cdEndereco" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="cdEndereco"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbendereco"/>
+	</field>
+	<field name="numero" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="numero"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbendereco"/>
+	</field>
+	<field name="logradouro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="logradouro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbendereco"/>
+	</field>
+	<field name="cep" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cep"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbendereco"/>
+	</field>
+	<field name="cidade" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cidade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbendereco"/>
+	</field>
+	<field name="bairro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bairro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbendereco"/>
+	</field>
+	<field name="uf" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uf"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbendereco"/>
+	</field>
+	<field name="cdPessoa" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="cdPessoa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbpessoa"/>
+	</field>
+	<field name="nmPessoa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nmPessoa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbpessoa"/>
+	</field>
+	<group name="cdPessoa">
+		<groupExpression><![CDATA[$F{cdPessoa}]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<textField>
+					<reportElement x="0" y="0" width="278" height="30" uuid="cf1213f3-788b-4e99-b730-5e4820bf007a"/>
+					<textFieldExpression><![CDATA[$F{cdPessoa}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="278" y="0" width="277" height="30" uuid="14bc0b78-1ca0-46b3-b14b-3b82801d9747"/>
+					<textFieldExpression><![CDATA[$F{nmPessoa}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="50"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="0" width="240" height="58" uuid="f38601b0-0bc5-4d59-835b-784b6be9efc7"/>
+				<textElement textAlignment="Center">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Relatorio dos endereços]]></text>
+			</staticText>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="160" height="58" uuid="0a7799ca-52c9-498e-aebb-d423c774ac19"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="0" width="145" height="58" uuid="1ab256e8-1d20-48ec-a1fb-1e45b01cd82a"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="81" height="30" uuid="a79aceb9-563f-4c9e-b14c-10607bfae010">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="983cd243-b950-4ae8-8623-092d2a885bd7"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cdEndereco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="0" width="79" height="30" uuid="efb484bd-7896-42a8-9e95-ed0e529e3ea8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ec16cc9a-444d-410c-b546-10653be48b2d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="79" height="30" uuid="c45de862-194b-438b-8e46-28732aa886ff">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="832aefb0-1887-46ad-aa94-8632d82fe3c9"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{logradouro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="239" y="0" width="79" height="30" uuid="9538a427-81e4-4468-b981-74667526eff1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b5a91399-88b1-40da-ad9c-9a6f10c5cffe"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="318" y="0" width="79" height="30" uuid="b28fa7e8-c101-4a4f-b33f-54745edacb12">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17ffc4f9-14c4-45c3-bd83-e4ca15e55de5"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="0" width="79" height="30" uuid="65190b3c-8de2-4be4-acbd-2f42218612b6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b7d1a2fe-b56d-47e3-a4eb-603c541e0f38"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{bairro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="476" y="0" width="79" height="30" uuid="4636d8e2-5d3b-4aa2-856b-600ffa81c756">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="112d9000-f168-484b-a69f-4bec83ef72f1"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{uf}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
